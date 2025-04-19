@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Watchdog Panel</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>📺 Watchdog Canal+ – Panel</h2>
+      <p><a href="/logout">Wyloguj się</a></p>
+
+      <div class="section">
+        <h3>📊 Status Tokenów</h3>
+        <pre>{{ status | tojson(indent=2) }}</pre>
+      </div>
+
+      <div class="section">
+        <h3>🧾 Pliki MPD:</h3>
+        <ul>
+          {% for f in mpds %}
+          <li>{{ f }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>📄 Pliki parsed_info:</h3>
+        <ul>
+          {% for f in parsed %}
+          <li>{{ f }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
